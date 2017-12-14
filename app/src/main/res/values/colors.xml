@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f97205</color>
+    <color name="colorPrimaryDark">#dff97205</color>
+    <color name="colorAccent">#f97205</color>
+    <color name="color_press">#ff5200</color>
+    <color name="color_false">#8a8a8a</color>
+    <color name="color_green">#5dc111</color>
+    <color name="color_grap">#cfcdcd</color>
+</resources>
