@@ -25,6 +25,15 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.gzlygl.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
         <activity
             android:name=".view.activity.FirstActivity"
             android:launchMode="singleTask">
@@ -42,7 +51,8 @@
         <activity android:name=".view.activity.EditActivity" />
         <activity android:name=".view.activity.CommentActivity" />
         <activity android:name=".view.activity.StorkeEditActivity" />
-        <activity android:name=".view.activity.PreImageActivity"></activity>
+        <activity android:name=".view.activity.PreImageActivity" />
+        <activity android:name=".view.activity.StorkeActivity"></activity>
     </application>
 
 </manifest>

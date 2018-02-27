@@ -28,6 +28,7 @@ public class StorkeFragment extends Fragment implements IStorkeView{
     private FloatingActionButton add_btn;
     private StorkePresenter presenter;
     private StorkeBaseRecyclerViewAdapter adapter;
+    private String plan_id;
     public StorkeFragment() {
 
     }
@@ -39,6 +40,8 @@ public class StorkeFragment extends Fragment implements IStorkeView{
         View view=inflater.inflate(R.layout.fragment_storke, container, false);
         initView(view);
         presenter=new StorkePresenter(this);
+        presenter.setPlan_id(plan_id);
+        presenter.refreshStorkeList();
         return view;
     }
 
@@ -98,5 +101,9 @@ public class StorkeFragment extends Fragment implements IStorkeView{
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void setPlan_id(String plan_id){
+        this.plan_id=plan_id;
     }
 }

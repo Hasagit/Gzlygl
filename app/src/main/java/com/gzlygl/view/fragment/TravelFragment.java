@@ -144,7 +144,6 @@ public class TravelFragment extends Fragment implements ITravelView{
     @Override
     public void refreshListView(final List<Diary> data) {
         adapter=new DiaryBaseRecyclerViewAdapter(getActivity(),R.layout.diary_item,data);
-        GridLayoutManager layoutManager=new GridLayoutManager(getContext(),1,LinearLayoutManager.VERTICAL,false);
         diaryListView.init(new GridLayoutManager(getContext(),1,LinearLayoutManager.VERTICAL,false),
                 new OnRefreshListener() {
                     @Override

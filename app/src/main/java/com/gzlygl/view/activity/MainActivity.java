@@ -25,6 +25,7 @@ import com.gzlygl.adapter.ViewPagerAdapter;
 import com.gzlygl.presenter.MainPresenter;
 import com.gzlygl.view.fragment.CollectionFragment;
 import com.gzlygl.view.fragment.PersonFragment;
+import com.gzlygl.view.fragment.PlanFragment;
 import com.gzlygl.view.fragment.StorkeFragment;
 import com.gzlygl.view.fragment.TravelFragment;
 import com.gzlygl.view.viewinterface.IMainView;
@@ -119,7 +120,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,I
         viewPager=(ViewPager)findViewById(R.id.content);
         viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new TravelFragment(),"游记");
-        viewPagerAdapter.addFragment(new StorkeFragment(),"行程");
+        viewPagerAdapter.addFragment(new PlanFragment(),"行程");
         viewPagerAdapter.addFragment(new CollectionFragment(),"收藏");
         viewPagerAdapter.addFragment(new PersonFragment(),"我的");
         viewPager.setAdapter(viewPagerAdapter);

@@ -12,8 +12,8 @@ import cn.bmob.v3.listener.SaveListener;
 public class StorkeEditModel implements IStorkeEditModel{
 
     @Override
-    public void saveTravelPlan(String user_id, String date, String place, String plan, SaveListener<String> saveListener) {
-        TravelPlan travelPlan=new TravelPlan(user_id,date,place,plan);
+    public void saveTravelPlan(String plan_id, String date, String place, String plan, SaveListener<String> saveListener) {
+        TravelPlan travelPlan=new TravelPlan(plan_id,date,place,plan);
         travelPlan.save(saveListener);
     }
 }

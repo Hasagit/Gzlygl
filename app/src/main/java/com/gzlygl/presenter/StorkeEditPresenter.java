@@ -19,6 +19,7 @@ import cn.bmob.v3.listener.SaveListener;
 public class StorkeEditPresenter {
     private StorkeEditModel model;
     private StorkeEditActivity view;
+    private String plan_id;
     private PreferencesUtil preferencesUtil;
 
     public StorkeEditPresenter(StorkeEditActivity view) {
@@ -28,7 +29,7 @@ public class StorkeEditPresenter {
     }
 
     public void savePlan(String date_str,String place,String plan){
-        String user_id=preferencesUtil.getString("user_id");
+
         view.setPlaceErrorEnable(false);
         view.setDateErrorEnable(false);
         if (date_str.equals("")){
@@ -57,7 +58,7 @@ public class StorkeEditPresenter {
             return;
         }
         view.setProgressDialogShowing(true);
-        model.saveTravelPlan(user_id, date_str, place, plan, new SaveListener<String>() {
+        model.saveTravelPlan(plan_id, date_str, place, plan, new SaveListener<String>() {
             @Override
             public void done(String s, BmobException e) {
                 view.setProgressDialogShowing(false);
@@ -70,5 +71,9 @@ public class StorkeEditPresenter {
             }
         });
 
+    }
+
+    public void setPlan_id(String plan_id) {
+        this.plan_id = plan_id;
     }
 }

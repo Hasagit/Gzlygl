@@ -14,10 +14,10 @@ import cn.bmob.v3.listener.FindListener;
 
 public class StorkeModel implements IStorkeModel{
     @Override
-    public void getFourTravelPlan(String user_id, Date date,FindListener<TravelPlan> findListener) {
+    public void getFourTravelPlan(String plan_id, Date date,FindListener<TravelPlan> findListener) {
         BmobQuery<TravelPlan>query=new BmobQuery<>();
         query.addWhereLessThan("createdAt",new BmobDate(date));
-        query.addWhereEqualTo("user_id",user_id);
+        query.addWhereEqualTo("plan_id",plan_id);
         query.setLimit(4);
         query.order("-createdAt");
         query.findObjects(findListener);

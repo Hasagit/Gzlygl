@@ -30,6 +30,7 @@ public class StorkeEditActivity extends BaseActivity implements IStorkeEditView{
         setContentView(R.layout.activity_storke_edit);
         initView();
         presenter=new StorkeEditPresenter(this);
+        presenter.setPlan_id(getIntent().getStringExtra("plan_id"));
     }
 
     private void initView(){
@@ -102,5 +103,10 @@ public class StorkeEditActivity extends BaseActivity implements IStorkeEditView{
         }else {
             dialog.dismiss();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

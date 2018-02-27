@@ -26,24 +26,25 @@ public class StorkePresenter {
     private StorkeFragment view;
     private StorkeModel model;
     private PreferencesUtil preferencesUtil;
+    private String plan_id;
 
     public StorkePresenter(StorkeFragment view) {
         this.view = view;
         model=new StorkeModel();
         preferencesUtil=new PreferencesUtil(view.getContext());
-        refreshStorkeList();
+        //refreshStorkeList();
     }
 
     public void goToStorkeEditActivity(){
         Intent intent=new Intent(view.getContext(), StorkeEditActivity.class);
+        intent.putExtra("plan_id",plan_id);
         view.startActivityForResult(intent,0);
     }
 
 
     public void refreshStorkeList(){
         Date date=new Date(System.currentTimeMillis()+10000);
-        model.getFourTravelPlan(
-                preferencesUtil.getString("user_id"),
+        model.getFourTravelPlan(plan_id,
                 date,
                 new FindListener<TravelPlan>() {
                     @Override
@@ -97,4 +98,7 @@ public class StorkePresenter {
         }
     }
 
+    public void setPlan_id(String plan_id) {
+        this.plan_id = plan_id;
+    }
 }
